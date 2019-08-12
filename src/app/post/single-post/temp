@@ -1,0 +1,65 @@
+
+
+
+<div [ngClass]="{
+  'list-group-item' : true,
+  'card': true,
+  'first-elem': id=='0',
+  'list-group-item-danger':  getLikeIts() < '0',
+  'list-group-item-success': getLikeIts() > '0',
+  'list-group-item-light': getLikeIts() == '0'
+}"
+
+ style="width: 100%;">
+  <img  class="card-img-top img-responsive" [src]="post.photo">
+  <div class="card-body">
+    <h5 class="card-title">{{post.titre}}</h5>
+    <p class="card-text">{{post.texte}}</p>
+
+
+<button class="btn btn-success" (click)="onLike()"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+<button class="btn btn-danger" (click)="onBeurk()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+<button class="btn btn-danger pull-right" (click)="onDeleteMe()"><span class="glyphicon glyphicon-remove"></span></button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li [ngClass]="{
+  'list-group-item' : true,
+  'list-group-item-danger':  getLikeIts() < '0',
+  'list-group-item-success': getLikeIts() > '0',
+  'list-group-item-light': getLikeIts() == '0'
+}"
+>
+  <div class="row">
+          <h1 class="text-center">{{post.titre}}</h1>
+
+
+  </div>
+  <div class="row">
+      <p class="text-center">{{post.texte}}</p>
+
+  </div>
+  <div class="row">
+      <button class="btn btn-success" (click)="onLike()"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+      <button class="btn btn-danger" (click)="onBeurk()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+      <button class="btn btn-danger pull-right" (click)="onDeleteMe()">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+
+  </div>
+</li>

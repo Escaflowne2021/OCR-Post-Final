@@ -1,0 +1,14 @@
+.grid-container {
+  display: grid;
+
+  grid-template-rows: 20em;
+  grid-template-columns: 30% 30% 30%;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+app-single-post:first-child{
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+}

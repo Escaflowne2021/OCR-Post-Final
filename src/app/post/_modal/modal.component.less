@@ -1,0 +1,43 @@
+﻿
+jw-modal {
+    /* cacher par défaut*/
+    display: none;
+
+    .jw-modal {
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* au dessus du background */
+        z-index: 1000;
+
+        /* scroll */
+        overflow: auto;
+
+        .jw-modal-body {
+            padding: 20px;
+            background: #fff;
+            margin: 40px;
+        }
+    }
+
+    .jw-modal-background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* semi-transparent background  */
+        background-color: #000;
+        opacity: 0.75;
+        /* en dessous de la modal */
+        z-index: 900;
+    }
+}
+
+body.jw-modal-open {
+    overflow: hidden;
+}

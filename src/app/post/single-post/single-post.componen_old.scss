@@ -1,0 +1,36 @@
+
+
+.container-first{
+  display:flex;
+  height: 100%;
+
+}
+
+.container-photo {
+  width: 40%;
+
+}
+
+.img-first{
+  max-width: 100%;
+  max-height: 100%;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container-second {
+  width: 60%;
+  padding-left: 1em;
+
+}
+
+.text-container{
+  height: 80%;
+
+}
+
+.button-container {
+  bottom: 0;
+}

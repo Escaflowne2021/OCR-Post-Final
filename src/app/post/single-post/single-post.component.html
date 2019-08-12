@@ -1,0 +1,40 @@
+
+<button (click)="openModal(id+1, post)" [ngClass]="{
+  'list-group-item' : true,
+  'list-group-item-danger':  getLikeIts() < '0',
+  'list-group-item-success': getLikeIts() > '0',
+  'list-group-item-light': getLikeIts() == '0'
+}" style="margin-bottom: 20px;">
+<img [src]="post.photo" [alt]="post.titre" class="img-responsive">
+<div style="display:flex;">
+    <h4>{{post.titre}}</h4>
+    <div class="align-middle" style="margin-left: auto; margin-top: auto;margin-bottom: auto;">
+
+        <span [ngClass]="{
+          'badge': true,
+          'badge-pill': true,
+          'danger': getLikeIts() < '0',
+          'success': getLikeIts() > '0',
+          'primary': getLikeIts() == '0'
+        }" ><span class="glyphicon glyphicon-heart-empty"></span> {{getLikeIts()}} </span>
+    </div>
+</div>
+
+<jw-modal  [id]="id+1">
+        <img  class="card-img-top img-responsive"  [src]="post.photo" >
+        <h1>{{post.titre}}</h1>
+        <h4>{{getDate() | date: 'EEEE d MMMM y à HH:mm:ss' }}</h4>
+        <p>{{post.texte}}</p>
+
+            <button class="btn btn-success btn-circle btn-lg" (click)="onLike()"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+            <button class="btn btn-danger btn-circle btn-lg" (click)="onBeurk()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+            <button class="btn btn-danger pull-right btn-circle btn-lg" (click)="onDeleteMe()"><span class="glyphicon glyphicon-remove"></span></button>
+            <button class="btn btn-primary btn-circle btn-lg" (click)="closeModal(id+1);"><span class="glyphicon glyphicon-log-in"></span></button>
+
+
+</jw-modal>
+
+</button>
+
+
+

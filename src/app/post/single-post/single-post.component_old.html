@@ -1,0 +1,41 @@
+<div *ngIf="id==0" class="container-first">
+  <div class="container-photo">
+      <img [src]="post.photo" alt="" class="img-first">
+  </div>
+
+  <div class="container-second">
+    <div class="text-container">
+        <h2 class="titre">{{post.titre}}</h2>
+        <p class="texte">{{post.texte}}</p>
+    </div>
+    <div class="button-container">
+        <button class="btn btn-success" (click)="onLike()"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <button class="btn btn-danger" (click)="onBeurk()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+        <button class="btn btn-danger pull-right" (click)="onDeleteMe()"><span class="glyphicon glyphicon-remove"></span></button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div *ngIf="id > 0" [ngClass]="{
+  'list-group-item' : true,
+  'card': true,
+  'list-group-item-danger':  getLikeIts() < '0',
+  'list-group-item-success': getLikeIts() > '0',
+  'list-group-item-light': getLikeIts() == '0'
+}"
+
+>
+  <img  class="card-img-top img-responsive"  [src]="post.photo" style="overflow:hidden;">
+  <div class="card-body">
+    <h5 class="card-title">{{post.titre}}</h5>
+    <p class="card-text">{{post.texte}}</p>
+
+
+<button class="btn btn-success" (click)="onLike()"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+<button class="btn btn-danger" (click)="onBeurk()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+<button class="btn btn-danger pull-right" (click)="onDeleteMe()"><span class="glyphicon glyphicon-remove"></span></button>
+  </div>
+</div>
